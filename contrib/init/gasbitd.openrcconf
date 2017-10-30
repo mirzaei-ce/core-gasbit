@@ -1,0 +1,33 @@
+# /etc/conf.d/gasbitd: config file for /etc/init.d/gasbitd
+
+# Config file location
+#GASBITD_CONFIGFILE="/etc/gasbit/gasbit.conf"
+
+# What directory to write pidfile to?  (created and owned by $GASBITD_USER)
+#GASBITD_PIDDIR="/var/run/gasbitd"
+
+# What filename to give the pidfile
+#GASBITD_PIDFILE="${GASBITD_PIDDIR}/gasbitd.pid"
+
+# Where to write gasbitd data (be mindful that the blockchain is large)
+#GASBITD_DATADIR="/var/lib/gasbitd"
+
+# User and group to own gasbitd process
+#GASBITD_USER="gasbit"
+#GASBITD_GROUP="gasbit"
+
+# Path to gasbitd executable
+#GASBITD_BIN="/usr/bin/gasbitd"
+
+# Nice value to run gasbitd under
+#GASBITD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+GASBITD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for gasbitd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+GASBITD_SIGTERM_TIMEOUT=60

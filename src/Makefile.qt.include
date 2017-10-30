@@ -1,0 +1,439 @@
+bin_PROGRAMS += qt/gasbit-qt
+EXTRA_LIBRARIES += qt/libgasbitqt.a
+
+# gasbit qt core #
+QT_TS = \
+  qt/locale/gasbit_af.ts \
+  qt/locale/gasbit_af_ZA.ts \
+  qt/locale/gasbit_ar.ts \
+  qt/locale/gasbit_be_BY.ts \
+  qt/locale/gasbit_bg_BG.ts \
+  qt/locale/gasbit_bg.ts \
+  qt/locale/gasbit_bs.ts \
+  qt/locale/gasbit_ca_ES.ts \
+  qt/locale/gasbit_ca.ts \
+  qt/locale/gasbit_ca@valencia.ts \
+  qt/locale/gasbit_cs_CZ.ts \
+  qt/locale/gasbit_cs.ts \
+  qt/locale/gasbit_cy.ts \
+  qt/locale/gasbit_da.ts \
+  qt/locale/gasbit_de.ts \
+  qt/locale/gasbit_el_GR.ts \
+  qt/locale/gasbit_el.ts \
+  qt/locale/gasbit_en_GB.ts \
+  qt/locale/gasbit_en.ts \
+  qt/locale/gasbit_eo.ts \
+  qt/locale/gasbit_es_AR.ts \
+  qt/locale/gasbit_es_CL.ts \
+  qt/locale/gasbit_es_CO.ts \
+  qt/locale/gasbit_es_DO.ts \
+  qt/locale/gasbit_es_ES.ts \
+  qt/locale/gasbit_es_MX.ts \
+  qt/locale/gasbit_es.ts \
+  qt/locale/gasbit_es_UY.ts \
+  qt/locale/gasbit_es_VE.ts \
+  qt/locale/gasbit_et.ts \
+  qt/locale/gasbit_eu_ES.ts \
+  qt/locale/gasbit_fa_IR.ts \
+  qt/locale/gasbit_fa.ts \
+  qt/locale/gasbit_fi.ts \
+  qt/locale/gasbit_fr_CA.ts \
+  qt/locale/gasbit_fr_FR.ts \
+  qt/locale/gasbit_fr.ts \
+  qt/locale/gasbit_gl.ts \
+  qt/locale/gasbit_he.ts \
+  qt/locale/gasbit_hi_IN.ts \
+  qt/locale/gasbit_hr.ts \
+  qt/locale/gasbit_hu.ts \
+  qt/locale/gasbit_id_ID.ts \
+  qt/locale/gasbit_it.ts \
+  qt/locale/gasbit_ja.ts \
+  qt/locale/gasbit_ka.ts \
+  qt/locale/gasbit_kk_KZ.ts \
+  qt/locale/gasbit_ko_KR.ts \
+  qt/locale/gasbit_ky.ts \
+  qt/locale/gasbit_la.ts \
+  qt/locale/gasbit_lt.ts \
+  qt/locale/gasbit_lv_LV.ts \
+  qt/locale/gasbit_mk_MK.ts \
+  qt/locale/gasbit_mn.ts \
+  qt/locale/gasbit_ms_MY.ts \
+  qt/locale/gasbit_nb.ts \
+  qt/locale/gasbit_nl.ts \
+  qt/locale/gasbit_pam.ts \
+  qt/locale/gasbit_pl.ts \
+  qt/locale/gasbit_pt_BR.ts \
+  qt/locale/gasbit_pt_PT.ts \
+  qt/locale/gasbit_ro_RO.ts \
+  qt/locale/gasbit_ro.ts \
+  qt/locale/gasbit_ru_RU.ts \
+  qt/locale/gasbit_ru.ts \
+  qt/locale/gasbit_sk.ts \
+  qt/locale/gasbit_sl_SI.ts \
+  qt/locale/gasbit_sq.ts \
+  qt/locale/gasbit_sr.ts \
+  qt/locale/gasbit_sv.ts \
+  qt/locale/gasbit_ta.ts \
+  qt/locale/gasbit_th_TH.ts \
+  qt/locale/gasbit_tr_TR.ts \
+  qt/locale/gasbit_tr.ts \
+  qt/locale/gasbit_uk.ts \
+  qt/locale/gasbit_ur_PK.ts \
+  qt/locale/gasbit_uz@Cyrl.ts \
+  qt/locale/gasbit_uz@Latn.ts \
+  qt/locale/gasbit_vi.ts \
+  qt/locale/gasbit_vi_VN.ts \
+  qt/locale/gasbit_zh_CN.ts \
+  qt/locale/gasbit_zh.ts \
+  qt/locale/gasbit_zh_TW.ts
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/overviewpage.ui \
+  qt/forms/receivecoinsdialog.ui \
+  qt/forms/receiverequestdialog.ui \
+  qt/forms/debugwindow.ui \
+  qt/forms/sendcoinsdialog.ui \
+  qt/forms/sendcoinsentry.ui \
+  qt/forms/signverifymessagedialog.ui \
+  qt/forms/transactiondescdialog.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_gasbitaddressvalidator.cpp \
+  qt/moc_gasbitamountfield.cpp \
+  qt/moc_gasbitgui.cpp \
+  qt/moc_gasbitunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_overviewpage.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_receivecoinsdialog.cpp \
+  qt/moc_receiverequestdialog.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_sendcoinsdialog.cpp \
+  qt/moc_sendcoinsentry.cpp \
+  qt/moc_signverifymessagedialog.cpp \
+  qt/moc_splashscreen.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactiondesc.cpp \
+  qt/moc_transactiondescdialog.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_transactionview.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletframe.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/moc_walletview.cpp
+
+GASBIT_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/gasbit.moc \
+  qt/gasbitamountfield.moc \
+  qt/intro.moc \
+  qt/overviewpage.moc \
+  qt/rpcconsole.moc
+
+QT_QRC_CPP = qt/qrc_gasbit.cpp
+QT_QRC = qt/gasbit.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_gasbit_locale.cpp
+QT_QRC_LOCALE = qt/gasbit_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+GASBIT_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/gasbitaddressvalidator.h \
+  qt/gasbitamountfield.h \
+  qt/gasbitgui.h \
+  qt/gasbitunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/overviewpage.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/receivecoinsdialog.h \
+  qt/receiverequestdialog.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/sendcoinsdialog.h \
+  qt/sendcoinsentry.h \
+  qt/signverifymessagedialog.h \
+  qt/splashscreen.h \
+  qt/trafficgraphwidget.h \
+  qt/transactiondesc.h \
+  qt/transactiondescdialog.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/transactionview.h \
+  qt/utilitydialog.h \
+  qt/walletframe.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/walletview.h \
+  qt/winshutdownmonitor.h
+
+RES_ICONS = \
+  qt/res/icons/add.png \
+  qt/res/icons/address-book.png \
+  qt/res/icons/about.png \
+  qt/res/icons/about_qt.png \
+  qt/res/icons/gasbit.ico \
+  qt/res/icons/gasbit.png \
+  qt/res/icons/clock1.png \
+  qt/res/icons/clock2.png \
+  qt/res/icons/clock3.png \
+  qt/res/icons/clock4.png \
+  qt/res/icons/clock5.png \
+  qt/res/icons/configure.png \
+  qt/res/icons/connect0.png \
+  qt/res/icons/connect1.png \
+  qt/res/icons/connect2.png \
+  qt/res/icons/connect3.png \
+  qt/res/icons/connect4.png \
+  qt/res/icons/debugwindow.png \
+  qt/res/icons/edit.png \
+  qt/res/icons/editcopy.png \
+  qt/res/icons/editpaste.png \
+  qt/res/icons/export.png \
+  qt/res/icons/eye.png \
+  qt/res/icons/eye_minus.png \
+  qt/res/icons/eye_plus.png \
+  qt/res/icons/filesave.png \
+  qt/res/icons/history.png \
+  qt/res/icons/info.png \
+  qt/res/icons/key.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/open.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/quit.png \
+  qt/res/icons/receive.png \
+  qt/res/icons/remove.png \
+  qt/res/icons/send.png \
+  qt/res/icons/synced.png \
+  qt/res/icons/transaction0.png \
+  qt/res/icons/transaction2.png \
+  qt/res/icons/transaction_conflicted.png \
+  qt/res/icons/tx_inout.png \
+  qt/res/icons/tx_input.png \
+  qt/res/icons/tx_output.png \
+  qt/res/icons/tx_mined.png \
+  qt/res/icons/warning.png \
+  qt/res/icons/verify.png
+
+GASBIT_QT_CPP = \
+  qt/bantablemodel.cpp \
+  qt/gasbitaddressvalidator.cpp \
+  qt/gasbitamountfield.cpp \
+  qt/gasbitgui.cpp \
+  qt/gasbitunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/splashscreen.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+if TARGET_WINDOWS
+GASBIT_QT_CPP += qt/winshutdownmonitor.cpp
+endif
+
+if ENABLE_WALLET
+GASBIT_QT_CPP += \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/overviewpage.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/receivecoinsdialog.cpp \
+  qt/receiverequestdialog.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/sendcoinsdialog.cpp \
+  qt/sendcoinsentry.cpp \
+  qt/signverifymessagedialog.cpp \
+  qt/transactiondesc.cpp \
+  qt/transactiondescdialog.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/transactionview.cpp \
+  qt/walletframe.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/walletview.cpp
+endif
+
+RES_IMAGES = 
+
+RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
+
+GASBIT_RC = qt/res/gasbit-qt-res.rc
+
+GASBIT_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+
+qt_libgasbitqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(GASBIT_INCLUDES) $(GASBIT_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
+qt_libgasbitqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libgasbitqt_a_SOURCES = $(GASBIT_QT_CPP) $(GASBIT_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
+
+nodist_qt_libgasbitqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libgasbitqt_a_OBJECTS) $(qt_gasbit_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# gasbit-qt binary #
+qt_gasbit_qt_CPPFLAGS = $(AM_CPPFLAGS) $(GASBIT_INCLUDES) $(GASBIT_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
+qt_gasbit_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_gasbit_qt_SOURCES = qt/gasbit.cpp
+if TARGET_DARWIN
+  qt_gasbit_qt_SOURCES += $(GASBIT_MM)
+endif
+if TARGET_WINDOWS
+  qt_gasbit_qt_SOURCES += $(GASBIT_RC)
+endif
+qt_gasbit_qt_LDADD = qt/libgasbitqt.a $(LIBGASBIT_SERVER)
+if ENABLE_WALLET
+qt_gasbit_qt_LDADD += $(LIBGASBIT_WALLET)
+endif
+if ENABLE_ZMQ
+qt_gasbit_qt_LDADD += $(LIBGASBIT_ZMQ) $(ZMQ_LIBS)
+endif
+qt_gasbit_qt_LDADD += $(LIBGASBIT_CLI) $(LIBGASBIT_COMMON) $(LIBGASBIT_UTIL) $(LIBGASBIT_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_gasbit_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_gasbit_qt_LIBTOOLFLAGS = --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+qt/gasbitstrings.cpp: $(libgasbit_server_a_SOURCES) $(libgasbit_wallet_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
+
+translate: qt/gasbitstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(GASBIT_QT_CPP) $(GASBIT_QT_H) $(GASBIT_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/gasbit_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@test -f $(@D)/$(<F) || cp -f $< $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name gasbit_locale $(@D)/$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name gasbit $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libgasbitqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
+
+CLEANFILES += $(CLEAN_QT)
+
+gasbit_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libgasbitqt_a_OBJECTS) $(qt_gasbit_qt_OBJECTS) qt/gasbit-qt$(EXEEXT) $(LIBGASBITQT)
+
+gasbit_qt : qt/gasbit-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@

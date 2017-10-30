@@ -1,0 +1,6 @@
+usr/local/bin/gasbit-qt usr/bin
+share/pixmaps/gasbit32.xpm usr/share/pixmaps
+share/pixmaps/gasbit16.xpm usr/share/pixmaps
+share/pixmaps/gasbit128.png usr/share/pixmaps
+debian/gasbit-qt.desktop usr/share/applications
+debian/gasbit-qt.protocol usr/share/kde4/services/

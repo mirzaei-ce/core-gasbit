@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gasbit
+Comment=Gasbit P2P Cryptocurrency
+Comment[fr]=Gasbit, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Gasbit, eşten eşe kriptografik sanal para birimi
+Exec=gasbit-qt %u
+Terminal=false
+Type=Application
+Icon=gasbit128
+MimeType=x-scheme-handler/gasbit;
+Categories=Office;Finance;
